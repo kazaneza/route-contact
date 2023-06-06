@@ -1,5 +1,5 @@
 import { Outlet, Link, useLoaderData, Form, } from "react-router-dom";
-import { getContacts, createContacts } from "../contacts";
+import { getContacts, createContact } from "../contacts";
 
 
 export default function Root() {
@@ -12,7 +12,7 @@ export default function Root() {
             <Form method="post">
               <button type="submit">New</button>
             </Form>
-            {/* <form id="search-form" role="search">
+            <form id="search-form" role="search">
               <input
                 id="q"
                 aria-label="Search contacts"
@@ -30,7 +30,7 @@ export default function Root() {
                 aria-live="polite"
               ></div>
             </form>
-            <form method="post">
+            {/* <form method="post">
               <button type="submit">New</button>
             </form> */}
           </div>
@@ -74,6 +74,6 @@ export default function Root() {
   }
 
   export async function action(){
-    const contact = await createContacts();
+    const contact = await createContact();
     return { contact };
   }
